@@ -1,0 +1,12 @@
+name: github checkout       # 워크플로우 이름
+on: [push]                  # push 이벤트 발생 시 실행
+
+jobs:
+  build:
+    runs-on: ubuntu-latest  # 최신 우분투 환경에서 실행
+    steps:
+      - uses: actions/checkout@v2  # GitHub 저장소 코드를 체크아웃 (필수 단계!)
+      - name: Run pwd
+        run: pwd            # 현재 디렉토리 출력
+      - name: Run ls -al
+        run: ls -al         # 전체 파일 리스트 출력
