@@ -1,0 +1,12 @@
+name: Hello World          # 워크플로우 이름
+on: [push]                 # push 이벤트 발생 시 실행됨
+
+jobs:                      # 작업 정의 시작
+  build:                   # 작업 이름 (build)
+    runs-on: ubuntu-latest # Ubuntu 최신 환경에서 실행
+    steps:                 # 단계별 명령
+      # - uses: actions/checkout@v2  ← 이 줄은 주석 처리되어 실제 실행되지 않음
+      - name: Run pwd
+        run: pwd           # 현재 디렉토리 출력
+      - name: Run ls -al
+        run: ls -al        # 현재 디렉토리의 파일 목록 상세히 출력
